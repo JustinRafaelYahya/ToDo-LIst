@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 function Task({ task, onChange, onDelete }) {
@@ -19,9 +21,15 @@ function Task({ task, onChange, onDelete }) {
           />
           <p className="mx-10">{taskContent}</p>
         </span>
-        <span className="w-fit h-fit flex border-[1px] border-[#d2a6ae] p-2 rounded-md">
-          <button onClick={() => onDelete(task.id)}>
-            <FaRegTrashAlt className="  fill-[#d2a6ae] scale-90" />
+        <span className=" h-[38px] w-[6%] flex justify-center items-center border-[1px] border-[#d2a6ae] p-2 -my-1 rounded-md">
+          <button
+            onClick={() => onDelete(task.id)}
+            className="flex justify-center"
+          >
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              style={{ color: "#feb5bc", scale: "85%" }}
+            />
           </button>
         </span>
         {/* </label> */}
